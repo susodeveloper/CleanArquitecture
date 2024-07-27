@@ -7,6 +7,10 @@ namespace CleanArchitecture.Domain.Alquileres;
 
 public sealed class Alquiler : Entity
 {
+    private Alquiler()
+    {
+    }
+    
     private Alquiler(
         Guid id,
         Guid vehiculoId,
@@ -30,6 +34,8 @@ public sealed class Alquiler : Entity
         AlquilerStatus = status;
         FechaCreacion = fechaCreacion;
     }
+
+ 
 
     public AlquilerStatus AlquilerStatus { get; private set; }
     public DateRange Duracion { get; private set; }
