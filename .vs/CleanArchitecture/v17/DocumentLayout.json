@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\cleanarquitecture\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\abstractions\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\abstractions\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\abstractions\\idomainevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\abstractions\\idomainevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\users\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\users\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\users\\apellido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\users\\apellido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\users\\nombre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\users\\nombre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\vehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\moneda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\moneda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\tipomoneda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\tipomoneda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\vin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\vin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\modelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\modelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|c:\\cleanarquitecture\\src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD396A7-B4EB-4BB8-AE58-E902BB8A31BD}|src\\CleanArchitecture\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj|solutionrelative:src\\cleanarchitecture\\cleanarchitecture.domain\\vehiculos\\accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IDomainEvents.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\IDomainEvents.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\IDomainEvents.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\IDomainEvents.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\IDomainEvents.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T11:48:18.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Email.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Email.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Email.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Email.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Email.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:55:47.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Apellido.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Apellido.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Apellido.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Apellido.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Apellido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:54:44.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Nombre.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Nombre.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Nombre.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Nombre.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\Nombre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:53:50.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\User.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\User.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\User.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Users\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:52:10.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Moneda.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Moneda.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Moneda.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Moneda.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Moneda.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T07:25:12.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TipoMoneda.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\TipoMoneda.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\TipoMoneda.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\TipoMoneda.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\TipoMoneda.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAB+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T07:18:01.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Vin.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vin.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vin.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vin.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:54:41.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vehiculo.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vehiculo.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vehiculo.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vehiculo.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Vehiculo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:48:42.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\Entity.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\Entity.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\Entity.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Abstractions\\Entity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:46:35.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Modelo.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Modelo.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Modelo.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Modelo.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Modelo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:53:01.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Direccion.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Direccion.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Direccion.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Direccion.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Direccion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:46:45.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Accesorio.cs",
+              "DocumentMoniker": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Accesorio.cs",
+              "RelativeDocumentMoniker": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Accesorio.cs",
+              "ToolTip": "C:\\cleanarquitecture\\src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Accesorio.cs",
+              "RelativeToolTip": "src\\CleanArchitecture\\CleanArchitecture.Domain\\Vehiculos\\Accesorio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:46:42.601Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
