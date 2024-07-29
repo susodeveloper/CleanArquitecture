@@ -30,7 +30,7 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     private async Task PublishDomainEventsAsync()
     {
         var domainEvents = ChangeTracker
-            .Entries<Entity>()
+            .Entries<IEntity>()
             .Select(x => x.Entity)
             .SelectMany(x => {
                 var domainEvents = x.GetDomainEvents();

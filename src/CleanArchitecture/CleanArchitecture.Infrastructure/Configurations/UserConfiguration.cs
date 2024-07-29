@@ -12,6 +12,9 @@ namespace CleanArchitecture.Infrastructure.Configurations;
             builder.ToTable("users");
             builder.HasKey(x => x.Id);
 
+            builder.Property(UserId => UserId.Id)
+            .HasConversion(userID => userID!.Value, id => new UserId(id));
+
             builder.Property(x => x.Nombre)
                 .HasMaxLength(200)
                 .HasConversion(n => n!.Value, value => new Nombre(value));
