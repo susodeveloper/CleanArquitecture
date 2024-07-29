@@ -27,6 +27,10 @@ namespace CleanArchitecture.Infrastructure.Configurations;
                 .HasMaxLength(400)
                 .HasConversion(n => n!.Value, value => new Domain.Users.Email(value));
 
+            builder.Property(user => user.PasswordHash)
+            .HasMaxLength(2000)
+            .HasConversion(password => password!.Value, value => new PasswordHash(value));
+
             builder.HasIndex(x => x.Email)
                 .IsUnique();
         }
