@@ -1,16 +1,19 @@
+using CleanArchitecture.Application.Abstractions.Authentication;
 using CleanArchitecture.Application.Abstractions.Messaging;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Users;
 
-namespace CleanArchitecture.Application.Users;
+namespace CleanArchitecture.Application.Users.LoginUser;
 
 internal class LoginCommandHandler : ICommandHandler<LoginCommand, string>
 {
     private readonly IUserRepository _userRepository;
+    private readonly IJwtProvider _jwtProvider;
 
-    public LoginCommandHandler(IUserRepository userRepository)
+    public LoginCommandHandler(IUserRepository userRepository, IJwtProvider jwtProvider)
     {
         _userRepository = userRepository;
+        _jwtProvider = jwtProvider;
     }
 
     public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -21,6 +24,6 @@ internal class LoginCommandHandler : ICommandHandler<LoginCommand, string>
         if(!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash!.Value))
             return Result.Failure<string>(UserErrors.InvalidCredentials);
         
-        
+        return await _jwtProvider.Generate(user);
     }
 }

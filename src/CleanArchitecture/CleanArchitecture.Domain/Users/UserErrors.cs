@@ -6,4 +6,5 @@ public static class UserErrors
 {
     public static Error NotFound = new("User.NotFound", "User not found.");
     public static Error InvalidCredentials = new("User.InvalidCredentials", "Invalid credentials.");
+    public static Error AlreadyExists = new("User.AlreadyExists", "User already exists.");
 }
