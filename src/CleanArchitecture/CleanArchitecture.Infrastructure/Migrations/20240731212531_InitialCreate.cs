@@ -1,7 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace CleanArchitecture.Infrastructure.Migrations
 {
@@ -11,6 +14,31 @@ namespace CleanArchitecture.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "permissions",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false),
+                    nombre = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_permissions", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "roles",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    name = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_roles", x => x.id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "users",
                 columns: table => new
@@ -52,6 +80,54 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "roles_permissions",
+                columns: table => new
+                {
+                    role_id = table.Column<int>(type: "integer", nullable: false),
+                    permission_id = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_roles_permissions", x => new { x.role_id, x.permission_id });
+                    table.ForeignKey(
+                        name: "fk_roles_permissions_permissions_permissions_id",
+                        column: x => x.permission_id,
+                        principalTable: "permissions",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "fk_roles_permissions_roles_role_id",
+                        column: x => x.role_id,
+                        principalTable: "roles",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "users_roles",
+                columns: table => new
+                {
+                    role_id = table.Column<int>(type: "integer", nullable: false),
+                    user_id = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_users_roles", x => new { x.role_id, x.user_id });
+                    table.ForeignKey(
+                        name: "fk_users_roles_roles_role_id",
+                        column: x => x.role_id,
+                        principalTable: "roles",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "fk_users_roles_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "alquileres",
                 columns: table => new
                 {
@@ -79,7 +155,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 {
                     table.PrimaryKey("pk_alquileres", x => x.id);
                     table.ForeignKey(
-                        name: "fk_alquileres_user_user_temp_id",
+                        name: "fk_alquileres_user_user_temp_id1",
                         column: x => x.user_id,
                         principalTable: "users",
                         principalColumn: "id");
@@ -111,7 +187,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         principalTable: "alquileres",
                         principalColumn: "id");
                     table.ForeignKey(
-                        name: "fk_reviews_user_user_temp_id",
+                        name: "fk_reviews_user_user_temp_id1",
                         column: x => x.user_id,
                         principalTable: "users",
                         principalColumn: "id");
@@ -120,6 +196,36 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         column: x => x.veiculo_id,
                         principalTable: "vehiculos",
                         principalColumn: "id");
+                });
+
+            migrationBuilder.InsertData(
+                table: "permissions",
+                columns: new[] { "id", "nombre" },
+                values: new object[,]
+                {
+                    { 1, "ReadUser" },
+                    { 2, "WriteUser" },
+                    { 3, "UpdateUser" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "roles",
+                columns: new[] { "id", "name" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Cliente" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "roles_permissions",
+                columns: new[] { "permission_id", "role_id" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 1 },
+                    { 3, 1 },
+                    { 1, 2 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -148,10 +254,20 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 column: "veiculo_id");
 
             migrationBuilder.CreateIndex(
+                name: "ix_roles_permissions_permission_id",
+                table: "roles_permissions",
+                column: "permission_id");
+
+            migrationBuilder.CreateIndex(
                 name: "ix_users_email",
                 table: "users",
                 column: "email",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "ix_users_roles_user_id",
+                table: "users_roles",
+                column: "user_id");
         }
 
         /// <inheritdoc />
@@ -161,7 +277,19 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 name: "reviews");
 
             migrationBuilder.DropTable(
+                name: "roles_permissions");
+
+            migrationBuilder.DropTable(
+                name: "users_roles");
+
+            migrationBuilder.DropTable(
                 name: "alquileres");
+
+            migrationBuilder.DropTable(
+                name: "permissions");
+
+            migrationBuilder.DropTable(
+                name: "roles");
 
             migrationBuilder.DropTable(
                 name: "users");
