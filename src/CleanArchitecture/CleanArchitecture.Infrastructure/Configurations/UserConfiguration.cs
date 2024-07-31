@@ -31,7 +31,11 @@ namespace CleanArchitecture.Infrastructure.Configurations;
             .HasMaxLength(2000)
             .HasConversion(password => password!.Value, value => new PasswordHash(value));
 
-            builder.HasIndex(x => x.Email)
-                .IsUnique();
+            builder.HasIndex(x => x.Email).IsUnique();
+
+            builder.HasMany(x => x.Roles)
+                .WithMany()
+                .UsingEntity<UserRole>();
+                
         }
     }

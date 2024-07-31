@@ -27,7 +27,7 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient<IEmailService, EmailService>();
 
 
-            var connectionString = configuration.GetConnectionString("Database")
+            var connectionString = configuration.GetConnectionString("ConnectionString")
             ?? throw new ArgumentNullException("Database connection string is missing in appsettings.json");
 
             services.AddDbContext<ApplicationDbContext>(options =>{
