@@ -1,9 +1,10 @@
+using CleanArchitecture.Application.Paginations;
 using CleanArchitecture.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Repositories;
 
-internal sealed class UserRepository : Repository<User, UserId>, IUserRepository
+internal sealed class UserRepository : Repository<User, UserId>, IUserRepository, IPaginationUserRepository
 {
     public UserRepository(ApplicationDbContext dbContext) : base(dbContext)
     {

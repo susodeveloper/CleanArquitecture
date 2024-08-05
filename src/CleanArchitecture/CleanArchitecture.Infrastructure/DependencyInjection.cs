@@ -1,6 +1,8 @@
+using Asp.Versioning;
 using CleanArchitecture.Application.Abstractions.Clock;
 using CleanArchitecture.Application.Abstractions.Data;
 using CleanArchitecture.Application.Abstractions.Email;
+using CleanArchitecture.Application.Paginations;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Alquileres;
 using CleanArchitecture.Domain.Users;
@@ -23,6 +25,17 @@ namespace CleanArchitecture.Infrastructure
             IConfiguration configuration
         )
         {
+            services.AddApiVersioning(options =>{
+                options.DefaultApiVersion = new ApiVersion(1);
+                options.ReportApiVersions = true;
+                options.ApiVersionReader = new UrlSegmentApiVersionReader();
+                
+            }).AddMvc()
+            .AddApiExplorer( op =>{
+                op.GroupNameFormat = "'v'V";
+                op.SubstituteApiVersionInUrl = true;
+            });
+            
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IEmailService, EmailService>();
 
@@ -35,7 +48,11 @@ namespace CleanArchitecture.Infrastructure
             });
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPaginationUserRepository, UserRepository>();
+
             services.AddScoped<IVehiculoRepository, VehiculoRepository>();
+            services.AddScoped<IPaginationVehiculoRepository, VehiculoRepository>();
+            
             services.AddScoped<IAlquilerRepository, AlquilerRepository>();
 
             services.AddScoped<IUnitOfWork>( sp => sp.GetRequiredService<ApplicationDbContext>());

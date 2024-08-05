@@ -1,3 +1,4 @@
+using CleanArchitecture.Api.Documentation;
 using CleanArchitecture.Api.Extensions;
 using CleanArchitecture.Api.OptionsSetup;
 using CleanArchitecture.Application;
@@ -29,7 +30,12 @@ builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionAuthorizat
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
+
+builder.Services.AddSwaggerGen(op => {
+    op.CustomSchemaIds(type => type.ToString());
+});
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -40,7 +46,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(op => {
+        var descriptions = app.DescribeApiVersions();
+        foreach (var description in descriptions)
+        {
+            op.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+        }
+    });
 }
 
 await app.ApplyMigration();
