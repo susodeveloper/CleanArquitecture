@@ -23,7 +23,7 @@ where TEntityId : class
         return await DbContext.Set<TEntity>().FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
     }
 
-    public void Add(TEntity entity)
+    public virtual void Add(TEntity entity)
     {
         DbContext.Add(entity);
     }

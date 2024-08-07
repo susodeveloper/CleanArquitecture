@@ -17,5 +17,4 @@ public interface IPaginationVehiculoRepository
         bool ascending,
         bool disableTracking = true
     );
-    
 }

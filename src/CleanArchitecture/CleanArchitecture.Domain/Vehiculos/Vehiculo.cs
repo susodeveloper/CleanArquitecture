@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Shared;
 
@@ -5,7 +6,12 @@ namespace CleanArchitecture.Domain.Vehiculos;
 
 public sealed class Vehiculo : Entity<VehiculoId>
 {
-    private Vehiculo(){}
+    public static Expression<Func<Vehiculo, Modelo>> ValueExpression = u => u.Modelo!;
+
+    public static Expression<Func<Vehiculo, bool>> IsActiveSpecification() => x => true;
+    public static Expression<Func<Vehiculo, bool>> SearchTermSpecification(string key) => x =>
+         x.Modelo!.Value!.Contains(key, StringComparison.OrdinalIgnoreCase);
+    private Vehiculo() { }
     public Vehiculo(
         VehiculoId id,
         Modelo modelo,
@@ -16,7 +22,7 @@ public sealed class Vehiculo : Entity<VehiculoId>
         List<Accesorio> accesorios,
         Direccion? direccion
     ) : base(id)
-    { 
+    {
         Modelo = modelo;
         Vin = vin;
         Precio = precio;
@@ -27,10 +33,10 @@ public sealed class Vehiculo : Entity<VehiculoId>
     }
     public Modelo? Modelo { get; private set; }
     public Vin? Vin { get; private set; }
-    public Direccion? Direccion {get; private set;}
-    public Moneda? Precio {get; private set;}
-    public Moneda? Mantenimiento {get; private set;}
+    public Direccion? Direccion { get; private set; }
+    public Moneda? Precio { get; private set; }
+    public Moneda? Mantenimiento { get; private set; }
     public DateTime? FechaUltimoAlquiler { get; internal set; }
     public List<Accesorio> Accesorios { get; private set; } = new();
-    
+
 }

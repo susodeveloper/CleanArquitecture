@@ -1,3 +1,6 @@
+using Asp.Versioning;
+using Asp.Versioning.Builder;
+using CleanArchitecture.Api.Controllers.Alquileres;
 using CleanArchitecture.Api.Documentation;
 using CleanArchitecture.Api.Extensions;
 using CleanArchitecture.Api.OptionsSetup;
@@ -42,6 +45,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -69,4 +73,16 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+ApiVersionSet apiVersion = app.NewApiVersionSet()
+.HasApiVersion(new ApiVersion(1))
+.ReportApiVersions().Build();
+
+var routeGroupBuilder = app.MapGroup("api/v{version:apiVersion}")
+.WithApiVersionSet(apiVersion);
+
+routeGroupBuilder.MapAlquilerEndpoints();
+
+
 app.Run();
+
+public partial class Program;
