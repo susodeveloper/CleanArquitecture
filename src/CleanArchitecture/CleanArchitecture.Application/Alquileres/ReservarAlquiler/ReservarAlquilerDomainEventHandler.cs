@@ -27,11 +27,11 @@ internal sealed class ReservarAlquilerDomainEventHandler : INotificationHandler<
         var alquiler = await _alquilerRepository.GetByIdAsync(notification.AlquilerId, cancellationToken);
         if(alquiler is null) return;
 
-        var user = await _userRepository.GetByIdAsync(alquiler.UserId, cancellationToken);
+        var user = await _userRepository.GetByIdAsync(alquiler.UserId!, cancellationToken);
         if(user is null || user.Email is null) return;
 
-        await _emailService.SendAsync(
-            user.Email, 
+        _emailService.Send(
+            user.Email!.Value!, 
             "Alquiler reservado", 
             $"El alquiler con id {alquiler.Id} ha sido reservado correctamente. Tienes que confirmar la reserva en las próximas 24 horas."
         );

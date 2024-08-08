@@ -36,33 +36,25 @@ internal sealed class ReservarAlquilerCommandHandler : ICommandHandler<ReservarA
 
     public async Task<Result<Guid>> Handle(ReservarAlquilerCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.userId, cancellationToken);
-        if(user is null)
-        {
-            return Result.Failure<Guid>(UserErrors.NotFound);
-        }
+        var user = await _userRepository.GetByIdAsync(new UserId(request.userId), cancellationToken);
+        if(user is null) return Result.Failure<Guid>(UserErrors.NotFound);
 
-        var vehiculo = await _vehiculoRepository.GetByIdAsync(request.vehiculoId, cancellationToken);
-        if(vehiculo is null)
-        {
-            return Result.Failure<Guid>(VehiculoErrors.NotFound);
-        }
+        var vehiculo = await _vehiculoRepository.GetByIdAsync(new VehiculoId(request.vehiculoId), cancellationToken);
+        if(vehiculo is null) return Result.Failure<Guid>(VehiculoErrors.NotFound);
 
         var duracion = DateRange.Create(request.fechaInicio, request.fechaFin);
         if(await _alquilerRepository.IsOverlappingAsync(vehiculo, duracion, cancellationToken))
-        {
             return Result.Failure<Guid>(AlquilerErrors.Overlap);
-        }
 
         try
         {
-            var alquiler = Alquiler.Reservar(vehiculo, user.Id, duracion, _dateTimeProvider.currentTime, _precioService);
+            var alquiler = Alquiler.Reservar(vehiculo, user.Id!, duracion, _dateTimeProvider.currentTime, _precioService);
 
             _alquilerRepository.Add(alquiler);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return alquiler.Id;
+            return alquiler.Id!.Value;
         }
         catch (ConcurrencyException)
         {

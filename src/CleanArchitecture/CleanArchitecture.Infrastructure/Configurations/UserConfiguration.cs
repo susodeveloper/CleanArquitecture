@@ -12,6 +12,9 @@ namespace CleanArchitecture.Infrastructure.Configurations;
             builder.ToTable("users");
             builder.HasKey(x => x.Id);
 
+            builder.Property(UserId => UserId.Id)
+            .HasConversion(userID => userID!.Value, id => new UserId(id));
+
             builder.Property(x => x.Nombre)
                 .HasMaxLength(200)
                 .HasConversion(n => n!.Value, value => new Nombre(value));
@@ -24,7 +27,15 @@ namespace CleanArchitecture.Infrastructure.Configurations;
                 .HasMaxLength(400)
                 .HasConversion(n => n!.Value, value => new Domain.Users.Email(value));
 
-            builder.HasIndex(x => x.Email)
-                .IsUnique();
+            builder.Property(user => user.PasswordHash)
+            .HasMaxLength(2000)
+            .HasConversion(password => password!.Value, value => new PasswordHash(value));
+
+            builder.HasIndex(x => x.Email).IsUnique();
+
+            builder.HasMany(x => x.Roles)
+                .WithMany()
+                .UsingEntity<UserRole>();
+                
         }
     }

@@ -13,6 +13,9 @@ internal class AlquilerConfiguration : IEntityTypeConfiguration<Alquiler>
         builder.ToTable("alquileres");
         builder.HasKey(x => x.Id);
 
+        builder.Property(alquiler => alquiler.Id)
+            .HasConversion(alquilerID => alquilerID!.Value, id => new AlquilerId(id));
+
         builder.OwnsOne(a => a.PrecioPorPeriodo, priceBuilder =>
         {
             priceBuilder.Property(m => m.TipoMoneda)

@@ -1,11 +1,23 @@
+using Asp.Versioning;
+using CleanArchitecture.Api.Utils;
+using CleanArchitecture.Application.Vehiculos.GetVehiculosByPagination;
+using CleanArchitecture.Application.Vehiculos.GetVehiculosKitByPagination;
+using CleanArchitecture.Application.Vehiculos.ReportVehiculoPdf;
 using CleanArchitecture.Application.Vehiculos.SearchVehiculos;
+using CleanArchitecture.Domain.Abstractions;
+using CleanArchitecture.Domain.Permisions;
+using CleanArchitecture.Domain.Vehiculos;
+using CleanArchitecture.Infrastructure.Authentication;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QuestPDF.Fluent;
 
 namespace CleanArchitecture.Api.Controllers.Vehiculos;
 
 [ApiController]
-[Route("api/vehiculos")]
+[ApiVersion(ApiVersions.V1)]
+[Route("api/v{version:apiVersion}/vehiculos")]
 public class VehiculosController : ControllerBase
 {
     private readonly ISender _sender;
@@ -15,7 +27,21 @@ public class VehiculosController : ControllerBase
         _sender = sender;
     }
 
-    [HttpGet]
+    [AllowAnonymous]
+    [HttpGet("reporte")]
+    public async Task<IActionResult> ReporteVehiculos(
+        [FromQuery] string modelo,
+        CancellationToken cancellationToken
+    )
+    {
+        var query = new ReportVehiculoPdfQuery(modelo);
+        var result = await _sender.Send(query, cancellationToken);
+        byte[] pdfBytes = result.Value.GeneratePdf();
+        return File(pdfBytes, "application/pdf");
+    }
+
+    [HasPermission(PermissionEnum.ReadUser)]
+    [HttpGet("search")]
     public async Task<IActionResult> SearchVehiculos(
         DateOnly startDate,
         DateOnly endDate,
@@ -25,5 +51,28 @@ public class VehiculosController : ControllerBase
         var query = new SearchVehiculosQuery(startDate, endDate);
         var resultados = await _sender.Send(query, cancellationToken);
         return Ok(resultados.Value);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("getPagination", Name = "PaginationVehiculos")]
+    [ProducesResponseType(typeof(PaginationResult<Vehiculo, VehiculoId>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<PaginationResult<Vehiculo, VehiculoId>>> GetPaginationVehiculo(
+        [FromQuery] GetVehiculosByPaginationQuery request
+    )
+    {
+        var result = await _sender.Send(request);
+        return Ok(result.Value);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("getPaginationKit", Name ="PaginationVehiculoKit")]
+    [ProducesResponseType(typeof(PaginationResult<Vehiculo, VehiculoId>),StatusCodes.Status200OK)]
+    public async Task<ActionResult<PagedResults<Vehiculo, VehiculoId>>> GetPaginationVehiculoKit(
+        [FromQuery] GetVehiculosKitByPaginationQuery paginationQuery
+    )
+    {
+        var resultados = await _sender.Send(paginationQuery);
+        return Ok(resultados);
+
     }
 }

@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Vehiculos;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Repositories;
-internal sealed class AlquilerRepository : Repository<Alquiler>, IAlquilerRepository
+internal sealed class AlquilerRepository : Repository<Alquiler, AlquilerId>, IAlquilerRepository
 {
     private static readonly AlquilerStatus[] ActiveStatuses = [AlquilerStatus.Reservado, AlquilerStatus.Confirmado, AlquilerStatus.Completado];
 

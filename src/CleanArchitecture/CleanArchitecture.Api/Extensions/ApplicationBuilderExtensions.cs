@@ -6,7 +6,7 @@ namespace CleanArchitecture.Api.Extensions;
 
 public static class ApplicationBuilderExtensions
 {
-    public static async void ApplyMigration(this IApplicationBuilder app)
+    public static async Task ApplyMigration(this IApplicationBuilder app)
     {
         using(var scope = app.ApplicationServices.CreateScope())
         {
@@ -31,5 +31,10 @@ public static class ApplicationBuilderExtensions
     public static void UseCustomExceptionHandler(this IApplicationBuilder app )
     {
         app.UseMiddleware<ExceptionHandlingMiddleware>();
+    }
+
+    public static IApplicationBuilder UseRequestContextLogging(this IApplicationBuilder app)
+    {
+        return app.UseMiddleware<RequestContextLoggingMiddleware>();
     }
 }

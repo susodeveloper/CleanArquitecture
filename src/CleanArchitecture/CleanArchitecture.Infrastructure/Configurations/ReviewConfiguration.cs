@@ -13,12 +13,15 @@ internal class ReviewConfiguration : IEntityTypeConfiguration<Review>
         builder.ToTable("reviews");
         builder.HasKey(r => r.Id);
 
+         builder.Property(reviewId => reviewId.Id)
+            .HasConversion(reviewID => reviewID!.Value, id => new ReviewId(id));
+
         builder.Property(r => r.Rating)
-            .HasConversion(r => r.Value, value => Rating.Create(value).Value);
+            .HasConversion(r => r!.Value, value => Rating.Create(value).Value);
 
         builder.Property(r => r.Comentario)
             .HasMaxLength(200)
-            .HasConversion(r => r.Value, value => new Comentario(value));
+            .HasConversion(r => r!.Value, value => new Comentario(value));
 
         builder.HasOne<Vehiculo>()
             .WithMany()
