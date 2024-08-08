@@ -2,6 +2,7 @@ using Asp.Versioning;
 using CleanArchitecture.Api.Utils;
 using CleanArchitecture.Application.Vehiculos.GetVehiculosByPagination;
 using CleanArchitecture.Application.Vehiculos.GetVehiculosKitByPagination;
+using CleanArchitecture.Application.Vehiculos.ReportVehiculoPdf;
 using CleanArchitecture.Application.Vehiculos.SearchVehiculos;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Permisions;
@@ -10,6 +11,7 @@ using CleanArchitecture.Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QuestPDF.Fluent;
 
 namespace CleanArchitecture.Api.Controllers.Vehiculos;
 
@@ -23,6 +25,19 @@ public class VehiculosController : ControllerBase
     public VehiculosController(ISender sender)
     {
         _sender = sender;
+    }
+
+    [AllowAnonymous]
+    [HttpGet("reporte")]
+    public async Task<IActionResult> ReporteVehiculos(
+        [FromQuery] string modelo,
+        CancellationToken cancellationToken
+    )
+    {
+        var query = new ReportVehiculoPdfQuery(modelo);
+        var result = await _sender.Send(query, cancellationToken);
+        byte[] pdfBytes = result.Value.GeneratePdf();
+        return File(pdfBytes, "application/pdf");
     }
 
     [HasPermission(PermissionEnum.ReadUser)]

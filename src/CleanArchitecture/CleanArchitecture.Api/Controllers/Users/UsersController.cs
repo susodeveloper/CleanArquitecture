@@ -1,11 +1,14 @@
 using Asp.Versioning;
 using CleanArchitecture.Api.Utils;
 using CleanArchitecture.Application.Users.GetUsersDapperPagination;
+using CleanArchitecture.Application.Users.GetUserSession;
 using CleanArchitecture.Application.Users.GetUsersPagination;
 using CleanArchitecture.Application.Users.LoginUser;
 using CleanArchitecture.Application.Users.RegisterUser;
 using CleanArchitecture.Domain.Abstractions;
+using CleanArchitecture.Domain.Permisions;
 using CleanArchitecture.Domain.Users;
+using CleanArchitecture.Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +26,16 @@ public class UsersController : ControllerBase
     {
         _sender = sender;
     }
+
+    [HttpGet("me")]
+    [HasPermission(PermissionEnum.ReadUser)]
+    public async Task<IActionResult> GetUserMe(CancellationToken cancellationToken)
+    {
+        var resultados = await _sender.Send(new GetUserSessionQuery(), cancellationToken);
+        
+        return resultados.IsFailure ? NotFound(resultados.Error) : Ok(resultados.Value);
+    }
+
 
     [AllowAnonymous]
     [HttpPost("login")]

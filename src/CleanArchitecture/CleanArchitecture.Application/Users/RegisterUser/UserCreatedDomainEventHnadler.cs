@@ -22,7 +22,7 @@ internal sealed class UserCreatedDomainEventHnadler : INotificationHandler<UserC
 
         if(user is null) return;
 
-        await _emailService.SendAsync(user.Email!, "Welcome", "Welcome to our platform");
+        _emailService.Send(user.Email!.Value!, "Welcome", "Welcome to our platform");
 
     }
 }
